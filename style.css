@@ -105,19 +105,19 @@ a {
 /* ================= CONTACT SECTION ================= */
 
 .contact-section {
-  padding: 60px 20px;
+  padding-top: 50px;
   border-top: 1px solid #e5e5e5;
   background-color: #e9e9e7;
 }
 
 .contact-container {
-  max-width: 500px;
+  max-width: 450px;
   margin-left: 10%;
   text-align: left;
 }
 
 .contact-title {
-  font-size: 18px;
+  font-size: 16px;
   font-weight: 700;
   margin-bottom: 16px;
 }
@@ -130,7 +130,7 @@ a {
 
 .contact-links a {
   position: relative;
-  font-size: 16px;
+  font-size: 14px;
   color: #111;
   transition: color 0.3s ease;
 }
