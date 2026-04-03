@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Basic setup -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Page title -->
+  <title>MD ASIF</title>
+
+  <!-- Google font for big background text -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@600;900&display=swap"
+    rel="stylesheet"
+  />
+
+  <!-- Main CSS file -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <!-- ================= HERO SECTION ================= -->
+  <header class="hero" id="home">
+  <nav class="nav">
+    <div class="logo">
+    AS<span class="outline">I</span>F
+    </div>
+
+    <!-- Hamburger button -->
+    <div id="hamburger">
+      ☰
+    </div>
+
+    <!-- Nav links -->
+    <div class="nav-links" id="navLinks">
+      <a href="#home">Home</a>
+      <a href="#projects">Projects</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </nav>
+
+    <!-- Big background name -->
+    <div class="bg-text">
+      <h1>MD ASIF</h1>
+    </div>
+  </header>
+
+  <!-- ================= CONTACT SECTION ================= -->
+  <section id="contact" class="contact-section">
+    <div class="contact-container">
+      <h2 class="contact-title">Contact</h2>
+
+      <div class="contact-links">
+        <a href="mailto:mdasif110059@gmail.com">Email</a>
+        <a href="https://linkedin.com/in/mdasif04" target="_blank">LinkedIn</a>
+        <a href="https://github.com/mdasif40" target="_blank">GitHub</a>
+      </div>
+
+      <p class="location">Delhi, India</p>
+    </div>
+  </section>
+
+  <!-- ================= FOOTER ================= -->
+  <footer>
+    <p class="credit">
+      Designed by
+      <a href="https://instagram.com/mdasif04" target="_blank">vegetarian</a>
+    </p>
+
+    <p>© <span id="year"></span> Md Asif</p>
+  </footer>
+
+  <!-- Year script -->
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+
+  <!-- Main JS file -->
+  <script src="script.js"></script>
+</body>
+</html>

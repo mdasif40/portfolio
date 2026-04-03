@@ -1,0 +1,270 @@
+/* ================= GLOBAL ================= */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #f3f3f1;
+  color: #111111;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* ================= HERO SECTION ================= */
+
+.hero {
+  position: relative;
+  min-height: 100vh;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.nav {
+  position: relative;
+  z-index: 3;
+  width: 90%;
+  margin: 0 auto;
+  padding: 28px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-size: 22px;
+  font-weight: 600;
+  letter-spacing: -4px;
+  color: #ff5a1f;
+}
+
+/* ================= NAV LINKS ================= */
+
+.nav-links {
+  display: flex;
+  gap: 28px;
+}
+
+.nav-links a {
+  font-size: 15px;
+  color: #444;
+  transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+  color: #ff5a1f;
+}
+
+/* ================= HAMBURGER ================= */
+
+#hamburger {
+  display: none;
+  font-size: 28px;
+  line-height: 1;
+  cursor: pointer;
+  color: #111;
+  z-index: 5;
+}
+
+/* ================= BIG BACKGROUND NAME ================= */
+
+.bg-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: 1;
+  transform: translate(-50%, -50%);
+  font-family: "Inter", sans-serif;
+  font-size: clamp(180px, 18vw, 340px);
+  font-weight: 900;
+  line-height: 1;
+  white-space: nowrap;
+  color: rgba(0, 0, 0, 0.04);
+  pointer-events: none;
+  opacity: 0.9;
+}
+
+.bg-text h1 {
+  font-size: inherit;
+  font-weight: inherit;
+  line-height: inherit;
+}
+
+/* ================= CONTACT SECTION ================= */
+
+.contact-section {
+  padding: 60px 20px;
+  border-top: 1px solid #e5e5e5;
+  background-color: #e9e9e7;
+}
+
+.contact-container {
+  max-width: 500px;
+  margin-left: 10%;
+  text-align: left;
+}
+
+.contact-title {
+  font-size: 18px;
+  font-weight: 700;
+  margin-bottom: 16px;
+}
+
+.contact-links {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.contact-links a {
+  position: relative;
+  font-size: 16px;
+  color: #111;
+  transition: color 0.3s ease;
+}
+
+.contact-links a:hover {
+  color: #ff5a1f;
+}
+
+.contact-links a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -3px;
+  width: 0;
+  height: 1px;
+  background: #ff5a1f;
+  transition: width 0.3s ease;
+}
+
+.contact-links a:hover::after {
+  width: 100%;
+}
+
+.location {
+  margin-top: 28px;
+  font-size: 14px;
+  color: #777;
+}
+
+/* ================= FOOTER ================= */
+
+footer {
+  background: #e9e9e7;
+  text-align: center;
+  padding: 20px 0;
+}
+
+footer p {
+  font-size: 13px;
+  color: #777;
+  margin: 6px 0;
+}
+
+.credit {
+  font-size: 13px;
+  color: #888;
+  margin-top: 30px;
+}
+
+.credit a {
+  position: relative;
+  color: #111;
+  transition: color 0.3s ease;
+}
+
+.credit a:hover {
+  color: #ff5a1f;
+}
+
+.credit a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  width: 0;
+  height: 1px;
+  background: #ff5a1f;
+  transition: width 0.3s ease;
+}
+
+.credit a:hover::after {
+  width: 100%;
+}
+
+/* ================= MOBILE ================= */
+
+@media (max-width: 600px) {
+  .nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: 0;
+  }
+
+  #hamburger {
+    display: block;
+    font-size: 30px;
+    line-height: 1;
+    color: #111;
+  }
+
+  .nav-links {
+    position: absolute;
+    top: 72px;
+    right: 0;
+    min-width: 150px;
+    padding: 14px 18px;
+    display: none;
+    flex-direction: column;
+    gap: 12px;
+    background: rgba(243, 243, 241, 0.92);
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    border-radius: 8px;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+  }
+
+  .nav-links.show {
+    display: flex;
+  }
+
+  .nav-links a {
+    font-size: 15px;
+    color: #111;
+    transition: color 0.25s ease, transform 0.25s ease;
+  }
+
+  .nav-links a:hover {
+    color: #ff5a1f;
+    transform: translateX(4px);
+  }
+
+  .bg-text {
+    font-size: 28vw;
+  }
+
+  .contact-container {
+    margin-left: 20px;
+    margin-right: 20px;
+  }
+
+  .contact-title {
+    font-size: 22px;
+  }
+}
