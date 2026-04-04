@@ -1,81 +1,145 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <!-- Basic setup -->
+  <!-- ================= BASIC SETUP ================= -->
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <!-- Page title -->
-  <title>MD ASIF</title>
+  <!-- ================= SEO ================= -->
+  <title>Md Asif | Portfolio</title>
+  <meta
+    name="description"
+    content="Portfolio of Md Asif — Mechanical Engineering student at DTU, interested in design, simulation, vehicles, and meaningful engineering projects."
+  />
+  <meta
+    name="keywords"
+    content="Md Asif, Mechanical Engineer, DTU, Portfolio, Engineering, Design, Simulation, Projects"
+  />
+  <meta name="author" content="Md Asif" />
+  <meta name="robots" content="index, follow" />
 
-  <!-- Google font for big background text -->
+  <!-- ================= THEME ================= -->
+  <meta name="theme-color" content="#f3f3f1" />
+
+  <!-- ================= OPEN GRAPH ================= -->
+  <meta property="og:title" content="Md Asif | Portfolio" />
+  <meta
+    property="og:description"
+    content="Mechanical Engineering student at DTU building meaningful engineering projects."
+  />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://mdasif.in" />
+  <meta property="og:image" content="assets/icons/initial.png" />
+
+  <!-- ================= FAVICON ================= -->
+  <link rel="icon" type="image/png" href="assets/icons/initial.png" />
+  <link rel="shortcut icon" href="assets/icons/initial.png" />
+
+  <!-- ================= GOOGLE FONT ================= -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link
     href="https://fonts.googleapis.com/css2?family=Inter:wght@600;900&display=swap"
     rel="stylesheet"
   />
 
-  <!-- Main CSS file -->
+  <!-- ================= MAIN CSS ================= -->
   <link rel="stylesheet" href="style.css" />
 </head>
 
 <body>
   <!-- ================= HERO SECTION ================= -->
   <header class="hero" id="home">
-  <nav class="nav">
-    <div class="logo">
-    AS<span class="outline">I</span>F
-    </div>
+    <!-- Navigation -->
+    <nav class="nav" aria-label="Main navigation">
+      <a href="#home" class="logo" aria-label="Go to homepage">
+        AS<span class="outline">I</span>F
+      </a>
 
-    <!-- Hamburger button -->
-    <div id="hamburger">
-      ☰
-    </div>
+      <!-- Hamburger button -->
+      <button
+        id="hamburger"
+        class="hamburger"
+        type="button"
+        aria-label="Open menu"
+        aria-expanded="false"
+        aria-controls="navLinks"
+      >
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
 
-    <!-- Nav links -->
-    <div class="nav-links" id="navLinks">
-      <a href="#home">Home</a>
-      <a href="#projects">Projects</a>
-      <a href="#contact">Contact</a>
-    </div>
-  </nav>
+      <!-- Navigation links -->
+      <div class="nav-links" id="navLinks">
+        <a href="#home">Home</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </nav>
 
-    <!-- Big background name -->
-    <div class="bg-text">
-      <h1>Duniya<br>ka<br>PAPA.</h1>
+    <!-- Big background text -->
+    <div class="bg-text" aria-hidden="true">
+      <!-- Example:
+      <h1>MD<br>ASIF</h1>
+      -->
     </div>
   </header>
 
-  <!-- ================= CONTACT SECTION ================= -->
- <!-- <section id="contact" class="contact-section">
-    <div class="contact-container">
-      <h2 class="contact-title">Contact</h2>
+  <!-- ================= PROJECTS SECTION ================= -->
+  <main>
+    <section id="projects" class="projects-section" aria-label="Projects">
+      <!-- Add your project cards here -->
+    </section>
 
-      <div class="contact-links">
-        <a href="mailto:mdasif110059@gmail.com">Email</a>
-        <a href="https://linkedin.com/in/mdasif04" target="_blank">LinkedIn</a>
-        <a href="https://github.com/mdasif40" target="_blank">GitHub</a>
+    <!-- ================= CONTACT SECTION ================= -->
+    <section class="contact-section" id="contact" aria-labelledby="contact-title">
+      <div class="contact-container">
+        <h2 id="contact-title" class="visually-hidden">Contact</h2>
+
+        <div class="contact-links">
+          <a href="mailto:mdasif110059@gmail.com">Email</a>
+          <a
+            href="https://linkedin.com/in/mdasif04"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            LinkedIn
+          </a>
+          <a
+            href="https://github.com/mdasif40"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            GitHub
+          </a>
+        </div>
+
+        <p class="location">Delhi, India</p>
       </div>
-
-      <p class="location">Delhi, India</p>
-    </div>
-  </section> -->
+    </section>
+  </main>
 
   <!-- ================= FOOTER ================= -->
   <footer>
     <p class="credit">
       Designed by
-      <a href="https://instagram.com/mdasif04" target="_blank">vegetarian</a>
+      <a
+        href="https://instagram.com/mdasif04"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <strong>vegetarian</strong>
+      </a>
     </p>
 
-    <p>© <span id="year"></span> Md Asif</p>
+    <p>&copy; <span id="year"></span> Md Asif</p>
   </footer>
 
-  <!-- Year script -->
+  <!-- ================= SCRIPTS ================= -->
   <script>
     document.getElementById("year").textContent = new Date().getFullYear();
   </script>
-
-  <!-- Main JS file -->
   <script src="script.js"></script>
 </body>
 </html>
