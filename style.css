@@ -1,6 +1,8 @@
 /* ================= GLOBAL ================= */
 
-* {
+*,
+*::before,
+*::after {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -15,11 +17,39 @@ body {
   font-family: Arial, Helvetica, sans-serif;
   background-color: #f3f3f1;
   color: #111111;
+  line-height: 1.5;
+  overflow-x: hidden;
 }
 
 a {
   color: inherit;
   text-decoration: none;
+}
+
+button {
+  font: inherit;
+  background: none;
+  border: none;
+  outline: none;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/* ================= UTILITY ================= */
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  white-space: nowrap;
+  border: 0;
+  clip: rect(0, 0, 0, 0);
 }
 
 /* ================= HERO SECTION ================= */
@@ -32,10 +62,12 @@ a {
   flex-direction: column;
 }
 
+/* ================= NAVBAR ================= */
+
 .nav {
   position: relative;
-  z-index: 3;
-  width: 90%;
+  z-index: 10;
+  width: min(90%, 1200px);
   margin: 0 auto;
   padding: 28px 0;
   display: flex;
@@ -48,19 +80,21 @@ a {
   font-weight: 600;
   letter-spacing: -1.75px;
   color: #ff5a1f;
+  display: inline-block;
 }
 
-/* ================= NAV LINKS ================= */
+/* ================= NAV LINKS (DESKTOP) ================= */
 
 .nav-links {
   display: flex;
+  align-items: center;
   gap: 28px;
 }
 
 .nav-links a {
   font-size: 15px;
   color: #444;
-  transition: color 0.3s ease;
+  transition: color 0.3s ease, transform 0.3s ease, opacity 0.3s ease;
 }
 
 .nav-links a:hover {
@@ -69,16 +103,58 @@ a {
 
 /* ================= HAMBURGER ================= */
 
-#hamburger {
+.hamburger {
   display: none;
-  font-size: 28px;
-  line-height: 1;
+  width: 44px;
+  height: 44px;
+  position: relative;
   cursor: pointer;
-  color: #111;
-  z-index: 5;
+  z-index: 20;
+  border-radius: 10px;
+  transition: background 0.25s ease;
 }
 
-/* ================= BIG BACKGROUND NAME ================= */
+.hamburger:hover {
+  background: rgba(0, 0, 0, 0.04);
+}
+
+.hamburger span {
+  position: absolute;
+  left: 10px;
+  width: 24px;
+  height: 2px;
+  background: #111111;
+  border-radius: 999px;
+  transition: transform 0.3s ease, opacity 0.3s ease, top 0.3s ease;
+}
+
+.hamburger span:nth-child(1) {
+  top: 14px;
+}
+
+.hamburger span:nth-child(2) {
+  top: 21px;
+}
+
+.hamburger span:nth-child(3) {
+  top: 28px;
+}
+
+.hamburger.active span:nth-child(1) {
+  top: 21px;
+  transform: rotate(45deg);
+}
+
+.hamburger.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger.active span:nth-child(3) {
+  top: 21px;
+  transform: rotate(-45deg);
+}
+
+/* ================= BIG BACKGROUND TEXT ================= */
 
 .bg-text {
   position: absolute;
@@ -89,41 +165,40 @@ a {
   font-family: "Inter", sans-serif;
   font-size: clamp(180px, 18vw, 340px);
   font-weight: 900;
-  line-height: 1;
+  line-height: 0.95;
+  letter-spacing: -0.06em;
   white-space: nowrap;
   color: rgba(0, 0, 0, 0.04);
   pointer-events: none;
-  opacity: 0.9;
+  user-select: none;
 }
 
-.bg-text h1 {
-  font-size: inherit;
-  font-weight: inherit;
-  line-height: inherit;
+/* ================= PROJECTS SECTION ================= */
+
+.projects-section {
+  min-height: 40vh;
 }
 
 /* ================= CONTACT SECTION ================= */
 
 .contact-section {
-  padding-top: 50px;
+  padding: 40px 20px;
   border-top: 1px solid #e5e5e5;
   background-color: #e9e9e7;
+  display: flex;
+  justify-content: center;
 }
 
 .contact-container {
-  max-width: 450px;
-  margin-left: 10%;
-  text-align: left;
-}
-
-.contact-title {
-  font-size: 16px;
-  font-weight: 700;
-  margin-bottom: 16px;
+  width: 100%;
+  max-width: 500px;
+  text-align: center;
 }
 
 .contact-links {
   display: flex;
+  justify-content: center;
+  align-items: center;
   gap: 20px;
   flex-wrap: wrap;
 }
@@ -131,7 +206,7 @@ a {
 .contact-links a {
   position: relative;
   font-size: 14px;
-  color: #111;
+  color: #111111;
   transition: color 0.3s ease;
 }
 
@@ -155,9 +230,9 @@ a {
 }
 
 .location {
-  margin-top: 28px;
+  margin-top: 16px;
   font-size: 14px;
-  color: #777;
+  color: #777777;
 }
 
 /* ================= FOOTER ================= */
@@ -165,24 +240,22 @@ a {
 footer {
   background: #e9e9e7;
   text-align: center;
-  padding: 20px 0;
+  padding: 12px 20px 18px;
 }
 
 footer p {
   font-size: 13px;
-  color: #777;
-  margin: 6px 0;
+  color: #777777;
+  margin: 4px 0;
 }
 
 .credit {
   font-size: 13px;
-  color: #888;
-  margin-top: 30px;
+  color: #888888;
+  margin-top: 8px;
 }
 
 .credit a {
-  position: relative;
-  color: #111;
   transition: color 0.3s ease;
 }
 
@@ -190,54 +263,22 @@ footer p {
   color: #ff5a1f;
 }
 
-.credit a::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: -2px;
-  width: 0;
-  height: 1px;
-  background: #ff5a1f;
-  transition: width 0.3s ease;
-}
-
-.credit a:hover::after {
-  width: 100%;
-}
-
 /* ================= MOBILE ================= */
 
 @media (max-width: 600px) {
-  .nav {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    gap: 0;
-  }
-
-  #hamburger {
+  .hamburger {
     display: block;
-    font-size: 30px;
-    line-height: 1;
-    color: #111;
   }
 
   .nav-links {
     position: absolute;
     top: 72px;
     right: 0;
-    min-width: 150px;
-    padding: 14px 18px;
     display: none;
     flex-direction: column;
-    gap: 12px;
-    background: rgba(243, 243, 241, 0.92);
-    border: 1px solid rgba(0, 0, 0, 0.08);
-    border-radius: 8px;
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+    align-items: flex-end;
+    gap: 14px;
+    padding: 12px 0;
   }
 
   .nav-links.show {
@@ -245,26 +286,24 @@ footer p {
   }
 
   .nav-links a {
-    font-size: 15px;
-    color: #111;
-    transition: color 0.25s ease, transform 0.25s ease;
+    font-size: 17px;
+    font-weight: 500;
+    color: #111111;
+    opacity: 0.88;
   }
 
   .nav-links a:hover {
     color: #ff5a1f;
+    opacity: 1;
     transform: translateX(4px);
   }
 
   .bg-text {
-    font-size: 28vw;
+    font-size: 24vw;
+    max-width: 100%;
   }
 
-  .contact-container {
-    margin-left: 20px;
-    margin-right: 20px;
-  }
-
-  .contact-title {
-    font-size: 22px;
+  .contact-section {
+    padding: 36px 20px;
   }
 }
