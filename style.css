@@ -163,7 +163,7 @@ img {
   z-index: 1;
   transform: translate(-50%, -50%);
   font-family: "Inter", sans-serif;
-  font-size: clamp(180px, 18vw, 340px);
+  font-size: clamp(25px, 2.5vw, 300px);
   font-weight: 900;
   line-height: 0.95;
   letter-spacing: -0.06em;
@@ -299,7 +299,7 @@ footer p {
   }
 
   .bg-text {
-    font-size: 24vw;
+    font-size: 10vw;
     max-width: 100%;
   }
 
